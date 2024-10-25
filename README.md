@@ -39,6 +39,7 @@ The analysis phase involves utilising the cleaned and organised data to address 
 The data cleaning process is critical for ensuring the accuracy and reliability of the datasets used for Project Sunroof analysis. The primary dataset consists of:
 * 32 columns
 * 11,497 rows
+  
 Key activities involved in the data cleaning process include:
 Evaluated the raw datasets, including Google Project Sunroof data and the U.S. Census Bureau dataset, focusing on key columns for joining.
 Checked for null values and missing entries using Pandas, applying strategies for addressing missing values, including imputation or removal of affected records, and identified outliers in numerical data to ensure they did not adversely affect results.
@@ -73,7 +74,11 @@ ORDER BY
     pop.population DESC; 
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que1.jpg)
+
+
 The analysis reveals that **California**, with a population of **9.36 million** and sunlight potential of **520,147 kWh per kW**, offers the highest opportunity for solar energy adoption due to its large population and abundant sunlight. **Arizona**, **Nevada**, and **Texas** also show strong potential with their high population numbers and ample solar exposure. These states are prime candidates for solar initiatives, presenting excellent opportunities for expanding solar installations to meet energy and sustainability goals
+
 
 **2. Which regions with moderate solar coverage (between 35% and 50%) have the highest potential for new solar customers based on population size?**
    
@@ -97,12 +102,19 @@ ORDER BY
     potential_solar_customers DESC;  -- Identify areas with the highest potential customer base
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que2.1.jpg)
+
+
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que2.2.jpg)
+
+
 Insight:
 * **Georgia**, **Michigan**, and **Florida** rank as the top three states for potential customers, based on a combination of solar coverage and population, making them key targets for solar marketing and installation efforts.
 * **California** has the largest population (286,519) with 41.48% solar coverage, making it a prime target for expansion. Its 46.05% coverage suggests steady growth in adoption.
 * **North Carolina** and Texas both have 41.48% solar coverage and large populations, offering strong potential for increased adoption due to untapped customer bases.
 * **Ohio and Alabama** show moderate adoption, with solar coverage between 42.5% and 43.5%, signalling potential for growth with targeted efforts.
 * **Michigan** has a good balance of population and 44.34% solar coverage, making it a promising region for further solar expansion.
+  
 
 **3. Which states have contributed the most to carbon offset through solar installations, and how does the number of existing installations correlate with their carbon offset contributions?**
 
@@ -124,6 +136,8 @@ ORDER BY
     total_carbon_offset DESC; 
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que3.jpg)
+
 
 Insight:
 
@@ -132,6 +146,7 @@ Insight:
 * **California** has the highest number of installations (331,000+) but a slightly lower carbon offset at 66.8 million metric tons, suggesting room for optimization.
 * Mid-range states like Ohio, Illinois, and Michigan show moderate solar adoption and significant growth potential.
 * **Underdeveloped** states like Wyoming and Vermont have very low adoption rates, offering opportunities for solar expansion.
+  
 
 
 **4. Which regions have the highest potential for solar installations, with more than 50% of buildings qualified for solar, and what is the estimated number of potential solar customers in these regions?**
@@ -174,6 +189,12 @@ GROUP BY
 ORDER BY 
     total_potential_solar_customers DESC;
 ```
+
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que4.png)
+
+
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que4.1.png)
+
 
 Insight:
 
@@ -236,6 +257,8 @@ ORDER BY
     max_yearly_sunlight_kwh DESC;
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que6.png)
+
 
 Insights:
 * **South-facing** solar panels receive the **highest yearly sunlight** across most regions.
@@ -257,6 +280,9 @@ ORDER BY
     total_south_facing_panels DESC;
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que7.png)
+
+
 **8. Which regions, if fully covered by solar installations (100% coverage), would result in the highest carbon offset?**
 
 To Identify the regions (region_ZipCode) and states where 100% solar coverage is assumed and calculate the total carbon offset for each. By summing the carbon offset metric tons for regions with full solar coverage, the query provides insight into areas with the highest potential for carbon offset from solar energy adoption.
@@ -274,6 +300,8 @@ WHERE
 GROUP BY 
     ps.region_ZipCode, ps.state_name;
 ```
+
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que8.png)
 
 
 **9. If buildings in communities with 100% coverage all had solar roofs, how many metric tons of carbon would we offset?**
@@ -293,6 +321,8 @@ WHERE
   ps.percent_covered = 100.0
   AND pop.population > 0;
 ```
+
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que9.png)
 
 Insights:
 * **Total Carbon Offset**: If all buildings in regions with 100% solar coverage had solar roofs, the potential carbon offset would amount to **78,096.22 metric tons**.
@@ -318,6 +348,7 @@ ORDER BY
     ps.yearly_sunlight_kwh_total DESC;
 ```
 
+![Alt text](https://github.com/Ankita-Selokar/Google-Project-Sunroof-Analysis-Data-Driven-Solar-Insights./blob/main/Visuals/Que10.png)
 
 
 ### 5. Archive:
